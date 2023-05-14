@@ -23,7 +23,7 @@ if guild_ids:
 bot = discord.Bot()
 
 
-@bot.event
+@bot.listen()
 async def on_ready():
     """Handle the bot being ready."""
     logger.info(f'Logged in in as {bot.user}')
