@@ -10,9 +10,13 @@ coloredlogs.install(level='INFO')
 logger = logging.getLogger("basebot")
 
 # Load the environment variables from the .env file (if it exists)
-load_dotenv(dotenv_path='../.env')
+load_dotenv(dotenv_path=os.path.join(os.path.split(__file__)[0],
+                                     '..',
+                                     '.env'))
 # Get the guild IDs (check the README for more information)
-guild_ids = os.getenv('DISCORD_GUILD_IDS', None).split(',')
+guild_ids = os.getenv('DISCORD_GUILD_IDS', None)
+if guild_ids:
+    guild_ids = guild_ids.split(',')
 
 
 # Create the bot
