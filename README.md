@@ -60,6 +60,14 @@ to configure faster the bot's role. But the bot's role permissions can be modifi
   in the Discord App if you want. 
   - This is not the same with the *Privileged Gateway Intents* which must be set directly in the [Discord Developer Application 
   dashboard](https://discord.com/developers/applications)
+### Pycord
+- **Pycord client objects**: in pycord there are two different [client objects](https://docs.pycord.dev/en/stable/api/clients.html)
+`Bot` and `Client`. `Bot` is as subclass of `Client` and adds the possibility of handling commands like `/hello`. So, I would always 
+use `Bot`.
+- **Use listen() instead of event**: AFAIK when we are handling events like `on_message` the decorator `@bot.event` overrides the 
+event handler while `@bot.listen()` adds a handler for that event. So, we should be able to add multiple handlers with `@bot.listen()`.
+Whereas we should only be able to do it once if we use `@bot.event`.
+- **Events**: the list of events that we can handle are [here](https://docs.pycord.dev/en/stable/api/events.html).
 
 ## References
 - Getting started tutorial from Discord: https://discord.com/developers/docs/getting-started
