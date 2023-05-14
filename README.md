@@ -5,6 +5,13 @@ A base bot for Discord in *Python* that implements a few interactions.
 First, I recommend you to read this README completely. It might help you understand better the following steps.
 1. Create the Application and install install it in your Server by following 
 [this](https://discord.com/developers/docs/getting-started#step-1-creating-an-app).
+  - Grant it the *Message Content intent*.
+  - Grant the bot's role the following permissions:
+    - Send Messages and Create Posts
+    - Send Messages in Threads and Posts
+    - Create Public Threads
+    - Manage Threads and Posts
+    - Read Message History
 2. Create a `.env` file in the project root or add the following environment variables:
   - `DISCORD_BOT_TOKEN`: Check [this](https://discord.com/developers/docs/getting-started#step-1-creating-an-app)
   again to find how to get your bot token.
